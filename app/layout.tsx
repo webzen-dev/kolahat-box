@@ -3,8 +3,8 @@ import clsx from "clsx";
 import { Metadata, Viewport } from "next";
 import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
-import { Navbar } from "@/components/navbar";
-// import { fontSans } from "@/config/fonts";
+import { Vazirmatn } from "next/font/google";
+import { Header } from "@/components/layout/header";
 
 export const metadata: Metadata = {
   title: {
@@ -17,6 +17,12 @@ export const metadata: Metadata = {
   // },
 };
 
+const vazirmatn = Vazirmatn({
+  subsets: ["arabic"],
+  display: "swap",
+  variable: "--font-sans",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
@@ -35,12 +41,13 @@ export default function RootLayout({
       <body
         className={clsx(
           "min-h-screen text-foreground bg-background font-sans antialiased",
-          // fontSans.variable
+          vazirmatn.variable
+          
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "ligh" }}>
-          <Navbar />
-          <main className="container mx-auto flex-grow">{children}</main>
+          <Header />
+          <main className="mx-auto flex-grow">{children}</main>
         </Providers>
       </body>
     </html>
