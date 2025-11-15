@@ -4,6 +4,7 @@ import { Metadata, Viewport } from "next";
 import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { Vazirmatn } from "next/font/google";
+import { Header } from "@/components/layout/header";
 
 export const metadata: Metadata = {
   title: {
@@ -45,6 +46,7 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "ligh" }}>
+          <Header />
           <main className="mx-auto flex-grow">{children}</main>
         </Providers>
       </body>
