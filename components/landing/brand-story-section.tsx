@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function BrandStorySection() {
   return (
     <section className="container mx-auto min-h-screen font-sans py-10 flex flex-col gap-10 md:gap-20 md:aspect-square max-md:p-7">
-      <div className="flex items-end justify-between max-md:flex-col max-md:items-start gap-6">
+      <div className="flex items-end justify-between max-md:flex-col max-md:items-start gap-6 ">
         <div className="flex flex-col gap-2 ">
           <span className="text-foreground/40 text-lg">نمونه کارها</span>
           <b className="text-2xl">داستان برند شما تخصص ما</b>
