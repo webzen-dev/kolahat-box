@@ -1,14 +1,18 @@
 'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+
 import { Button } from '@heroui/button';
 import {
   ArrowLeftIcon,
   PlayCircleIcon,
   UserCircleIcon,
 } from '@heroicons/react/24/outline';
+
 import HatIcon from '../icons/hat-icon';
 import ScoreIcon from '../icons/score-icon';
+import clsx from 'clsx';
 
 const handleScrollDown = () => {
   window.scrollBy({
@@ -46,10 +50,12 @@ function UserReviewCard() {
         <b className="flex items-center gap-1 text-xs text-foreground/50 lg:text-sm">
           4.3 رضایت مشتری
           <div className="flex items-center">
-            <ScoreIcon className="size-3 lg:size-5 text-primary-600" />
-            <ScoreIcon className="size-3 lg:size-5 text-primary-600" />
-            <ScoreIcon className="size-3 lg:size-5 text-primary-600" />
-            <ScoreIcon className="size-3 lg:size-5 text-primary-600" />
+            {Array.from({ length: 4 }).map((_, i) => (
+              <ScoreIcon
+                key={i}
+                className="size-3 lg:size-5 text-primary-600"
+              />
+            ))}
           </div>
         </b>
       </div>
@@ -60,9 +66,10 @@ function UserReviewCard() {
 export default function HomeHeroSection() {
   return (
     <div
-      className="relative flex flex-col items-center justify-center w-full h-[95vh] max-md:pb-12 max-md:pt-30 font-sans bg-radial from-primary-500 to-primary-700 rounded-b-3xl 
-      overflow-hidden 
-    md:h-[90vh] lg:gap-20 gap-5"
+      className={clsx(
+        'relative flex flex-col items-center justify-center w-full h-[95vh] font-sans bg-radial from-primary-500 to-primary-700 rounded-b-3xl overflow-hidden',
+        'max-md:pb-12 max-md:pt-30 md:h-[90vh] lg:gap-20 gap-5'
+      )}
     >
       <Image
         fill
@@ -74,8 +81,13 @@ export default function HomeHeroSection() {
 
       <div className="absolute inset-0 z-10 w-full h-full bg-radial from-0% to-primary-700 rounded-b-3xl" />
 
-      <div className="container relative z-20 flex justify-start gap-15 text-background w-full max-md:flex-1 max-lg:gap-0 lg:justify-between lg:gap-10 max-lg:items-center max-lg:py-10 max-lg:flex-col-reverse">
-        <div className="flex flex-col w-1/2 gap-5 pt-10 md:pt-20 lg:pt-33 lg:gap-10 max-lg:items-center max-lg:w-full">
+      <div
+        className={clsx(
+          'container relative z-20 flex justify-start gap-15 text-background w-full mt-15',
+          'max-md:flex-1 md:mt-25 md:px-10 max-lg:max-w-none max-lg:p-15 max-lg:pe-20 max-lg:gap-0 lg:justify-between lg:gap-10 max-lg:items-center max-lg:py-10 max-md:flex-col-reverse'
+        )}
+      >
+        <div className="flex flex-col w-1/2 gap-5 pt-10 md:pt-20 md:items-start lg:pt-33 lg:gap-10 max-lg:w-full">
           <div className="flex flex-col text-3xl font-bold max-md:items-center md:text-3xl lg:text-5xl">
             <span>تعاملات کاربردی آسان با</span>
             <span>مشتری و بازاریابی</span>
@@ -102,15 +114,13 @@ export default function HomeHeroSection() {
             </b>
           </div>
 
-          <div
-            className="flex items-center gap-2 lg:gap-5 max-md:flex-col md:items-start lg:mt-10"
-          >
+          <div className="flex items-center gap-2 lg:gap-5 max-md:flex-col md:items-start lg:mt-10">
             <Button
               color="primary"
               as={Link}
               dir="ltr"
               href="/custom-order"
-              className="flex items-center gap-2 p-5 w-auto h-auto max-xl:text-sm lg:px-6 lg:py-5.25"
+              className="flex items-center gap-2 py-3 px-5 w-auto h-auto max-xl:text-sm lg:px-6 lg:py-5.25"
             >
               سفارش تولید اختصاصی
             </Button>
