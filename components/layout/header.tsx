@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -12,9 +10,7 @@ import dynamic from 'next/dynamic';
 import { ReactNode } from 'react';
 import clsx from 'clsx';
 
-const MobileDrawer = dynamic(() => import('./drawer'), {
-  ssr: false,
-});
+const MobileDrawer = dynamic(() => import('./drawer'));
 
 export interface HeaderLinksInterface {
   label: string;
@@ -53,7 +49,7 @@ export const links: HeaderLinksInterface[] = [
 export function Header() {
   return (
     <header className="w-full flex px-10 lg:px-35 pt-10 md:pt-14 gap-16 text-background justify-between items-center select-none absolute top-0 left-0 right-0 z-20">
-      <MobileDrawer className="md:hidden" links={links}/>
+      <MobileDrawer className="md:hidden" links={links} />
 
       <Link className="flex items-center gap-2.5" href="/" draggable="false">
         <Image
@@ -86,12 +82,13 @@ export function Header() {
 
       <div className="md:flex hidden gap-4 items-center">
         <Button
-          color="primary"
           as={Link}
+          href="/receive-invoice"
+          color="primary"
+          variant="solid"
           className="py-5.25 px-6 w-auto h-auto flex items-center gap-2"
           dir="ltr"
           startContent={<ArrowDownTrayIcon className="size-6" />}
-          href="/receive-invoice"
         >
           دریافت پیش فاکتور
         </Button>
