@@ -15,7 +15,7 @@ export default function AboutUsSection() {
   };
 
   return (
-    <section className="container mx-auto flex my-40 justify-between items-center gap-10 md:gap-22 max-md:flex-col-reverse px-7">
+    <section className="container mx-auto flex mt-30 justify-between items-center gap-10 md:gap-22 max-md:flex-col-reverse">
       <div className="flex-1 flex flex-col gap-5">
         <Image
           height={41.54}

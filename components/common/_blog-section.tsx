@@ -18,7 +18,7 @@ export interface blogProps {
 export default function BlogSection({ blog }: { blog: blogProps[] }) {
   const { ref } = useBlogCarousel();
   return (
-    <section className="flex flex-col w-full gap-18">
+    <section className="flex flex-col w-full gap-18 mt-40">
       {/* header section */}
       <div className="flex justify-between items-center w-full">
         <div className="flex flex-col gap-2">

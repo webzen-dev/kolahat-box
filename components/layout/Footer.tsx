@@ -107,7 +107,7 @@ const footerData: footerDataType[] = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gradient-to-br from-primary-800 to-primary-600 flex justify-center font-sans text-background overflow-hidden px-7">
+    <footer className="relative bg-gradient-to-br from-primary-800 to-primary-600 flex justify-center font-sans text-background overflow-hidden px-7 mt-40">
       <Image
         fill
         src="/images/Vectore.png"

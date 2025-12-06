@@ -1,4 +1,5 @@
 import BlogSection from '@/components/common/_blog-section';
+import AboutUsSection from '@/components/landing/about-us-section';
 import BrandStorySection from '@/components/landing/brand-story-section';
 import HomeHeroSection from '@/components/landing/home-hero-section';
 
@@ -64,11 +65,10 @@ export default function Home() {
   return (
     <section className="flex flex-col">
       {/* padding just for development mode  */}
-      <div className="container mx-auto px-10 py-20">
-         <HomeHeroSection/>
-              <AboutUsSection />
-
-         <BrandStorySection/> 
+      <HomeHeroSection />
+      <div className="container mx-auto px-10">
+        <AboutUsSection />
+        <BrandStorySection />
         <BlogSection blog={config.blogData} />
       </div>
     </section>

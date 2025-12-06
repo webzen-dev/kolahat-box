@@ -71,7 +71,7 @@ export default function BrandStorySection() {
   );
 
   return (
-    <section className="container mx-auto py-10 flex flex-col gap-10 font-sans">
+    <section className="container mt-10 mx-auto flex flex-col gap-10 font-sans">
       <div className="flex items-end justify-between max-md:flex-col max-md:items-start gap-6">
         <div className="flex flex-col gap-2">
           <span className="text-foreground/40 text-lg">نمونه کارها</span>
