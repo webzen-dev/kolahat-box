@@ -49,7 +49,7 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: "class", defaultTheme: "ligh" }}>
           {/* <Header /> */}
           <main className="mx-auto flex-grow">{children}</main>
-          <Footer/>
+          {/* <Footer/> */}
         </Providers>
       </body>
     </html>
