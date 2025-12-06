@@ -65,8 +65,10 @@ export default function Home() {
     <section className="flex flex-col">
       {/* padding just for development mode  */}
       <div className="container mx-auto px-10 py-20">
-        {/* <HomeHeroSection/> */}
-        {/* <BrandStorySection/> */}
+         <HomeHeroSection/>
+              <AboutUsSection />
+
+         <BrandStorySection/> 
         <BlogSection blog={config.blogData} />
       </div>
     </section>
