@@ -15,6 +15,7 @@ Each feature owns its UI and logic, while routing is handled exclusively by Next
 ---
 
 ## 📁 Project Structure
+```plaintext
 web/
 └── src/
     ├── app/
@@ -22,20 +23,16 @@ web/
     │   ├── globals.css
     │   ├── not-found.tsx
     │   ├── loading.tsx
-    │   │
     │   ├── page.tsx
-    │   │
     │   ├── about-us/
     │   │   ├── page.tsx
     │   │   └── sections.tsx
-    │   │
     │   ├── contact/
     │   │   └── page.tsx
-    │   │
     │   ├── dashboard/
-    │   │   ├── layout.tsx
-    │   │   ├── page.tsx
-    │   │   └── loading.tsx
+    │       ├── layout.tsx
+    │       ├── page.tsx
+    │       └── loading.tsx
     │
     ├── features/
     │   ├── about/
@@ -44,26 +41,22 @@ web/
     │   │   │   ├── Team.tsx
     │   │   │   └── Vision.tsx
     │   │   └── index.ts
-    │   │
     │   ├── contact/
     │   │   ├── components/
     │   │   └── index.ts
-    │   │
     │   ├── auth/
-    │   │   ├── components/
-    │   │   ├── hooks/
-    │   │   └── index.ts
+    │       ├── components/
+    │       ├── hooks/
+    │       └── index.ts
     │
     ├── shared/
     │   ├── ui/
     │   │   ├── Button.tsx
     │   │   ├── Input.tsx
     │   │   └── Modal.tsx
-    │   │
     │   ├── layout/
     │   │   ├── Header.tsx
     │   │   └── Footer.tsx
-    │   │
     │   ├── hooks/
     │   ├── lib/
     │   └── types/
@@ -71,10 +64,9 @@ web/
     ├── config/
     │   ├── env.ts
     │   └── constants.ts
-    │
     ├── styles/
     └── types/
-
+```
 ---
 
 ## 🧠 Architectural Principles
