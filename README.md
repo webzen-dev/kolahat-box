@@ -1,53 +1,149 @@
-# Next.js & HeroUI Template
+# kolahat-box
 
-This is a template for creating applications using Next.js 14 (app directory) and HeroUI (v2).
+Frontend web application built with **Next.js v16 (App Router)** using a **Feature-based (Domain-oriented) architecture**, designed to be **monorepo-ready**.
 
-[Try it on CodeSandbox](https://githubbox.com/heroui-inc/heroui/next-app-template)
+---
 
-## Technologies Used
+## 🧱 Architecture Overview
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [HeroUI v2](https://heroui.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+This project follows a **Feature-based Frontend Architecture on Next.js App Router**.
 
-## How to Use
+The core idea is to organize the UI by **features (domains)** instead of technical layers like `components`, `hooks`, or `utils`.
 
-### Use the template with create-next-app
+Each feature owns its UI and logic, while routing is handled exclusively by Next.js.
 
-To create a new project based on this template using `create-next-app`, run the following command:
+---
 
-```bash
-npx create-next-app -e https://github.com/heroui-inc/next-app-template
-```
+## 📁 Project Structure
 
-### Install dependencies
+web/
+└── src/
+    ├── app/
+    │   ├── layout.tsx
+    │   ├── globals.css
+    │   ├── not-found.tsx
+    │   ├── loading.tsx
+    │   │
+    │   ├── page.tsx
+    │   │
+    │   ├── about-us/
+    │   │   ├── page.tsx
+    │   │   └── sections.tsx
+    │   │
+    │   ├── contact/
+    │   │   └── page.tsx
+    │   │
+    │   ├── dashboard/
+    │   │   ├── layout.tsx
+    │   │   ├── page.tsx
+    │   │   └── loading.tsx
+    │
+    ├── features/
+    │   ├── about/
+    │   │   ├── sections/
+    │   │   │   ├── Hero.tsx
+    │   │   │   ├── Team.tsx
+    │   │   │   └── Vision.tsx
+    │   │   └── index.ts
+    │   │
+    │   ├── contact/
+    │   │   ├── components/
+    │   │   └── index.ts
+    │   │
+    │   ├── auth/
+    │   │   ├── components/
+    │   │   ├── hooks/
+    │   │   └── index.ts
+    │
+    ├── shared/
+    │   ├── ui/
+    │   │   ├── Button.tsx
+    │   │   ├── Input.tsx
+    │   │   └── Modal.tsx
+    │   │
+    │   ├── layout/
+    │   │   ├── Header.tsx
+    │   │   └── Footer.tsx
+    │   │
+    │   ├── hooks/
+    │   ├── lib/
+    │   └── types/
+    │
+    ├── config/
+    │   ├── env.ts
+    │   └── constants.ts
+    │
+    ├── styles/
+    └── types/
 
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
+---
 
-```bash
-npm install
-```
+## 🧠 Architectural Principles
 
-### Run the development server
+### 1. App Router as the Single Routing Layer
+- All routes live inside `app/`
+- Route files (`page.tsx`, `layout.tsx`) only compose UI
+- No business logic inside routes
 
-```bash
-npm run dev
-```
+### 2. Feature Ownership
+- Each feature is isolated inside `features/`
+- A feature can include UI, hooks, types, and internal logic
+- Features never import from `app/`
 
-### Setup pnpm (optional)
+### 3. Shared Is Truly Shared
+- `shared/` contains reusable, domain-agnostic code
+- No feature-specific logic is allowed inside `shared/`
 
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
+### 4. One-way Dependency Rule
+app → features → shared
 
-```bash
-public-hoist-pattern[]=*@heroui/*
-```
+Reverse imports are not allowed.
 
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
+---
 
-## License
+## 📦 Subpackage Today, Monorepo Tomorrow
 
-Licensed under the [MIT license](https://github.com/heroui-inc/next-app-template/blob/main/LICENSE).
+Currently, `kolahat-box` is developed as a **subpackage (standalone web app)**.
+
+The architecture is intentionally designed to support a **future migration to a monorepo** with minimal refactoring.
+
+
+Thanks to clear boundaries between `app`, `features`, and `shared`, the migration will mainly involve:
+- Moving folders
+- Updating path aliases
+- No architectural rewrite
+
+---
+
+## ⚙️ Next.js Compatibility
+
+- Fully compatible with **Next.js v16**
+- Uses **App Router**
+- Supports layouts, loading states, and server components
+- Aligned with official Next.js architectural recommendations
+
+---
+
+## ✅ Why This Architecture
+
+- Scales well for large applications
+- Easy to reason about and maintain
+- Team-friendly and monorepo-ready
+- Prevents common folder-structure anti-patterns
+
+---
+
+## 📌 Summary
+
+- Architecture: **Feature-based (Domain-oriented)**
+- Framework: **Next.js v16 (App Router)**
+- Backend: **Separated (CMS & API)**
+- Current setup: **Subpackage**
+- Future plan: **Monorepo migration**
+
+This structure prioritizes long-term maintainability over short-term convenience.
+
+
+
+
+
