@@ -15,7 +15,6 @@ Each feature owns its UI and logic, while routing is handled exclusively by Next
 ---
 
 ## 📁 Project Structure
-
 web/
 └── src/
     ├── app/
