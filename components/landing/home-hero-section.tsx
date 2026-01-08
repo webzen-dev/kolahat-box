@@ -68,26 +68,26 @@ export default function HomeHeroSection() {
   return (
     <div
       className={clsx(
-        'relative flex flex-col items-center justify-center w-full h-[95vh] font-sans bg-radial-[at_50%_100%] from-accent/86 to-accent rounded-b-3xl overflow-hidden',
-        'max-md:pb-12 max-md:pt-30 md:h-[90vh] lg:gap-20 gap-5'
+        'relative flex flex-col items-center justify-center w-full h-[90vh] rounded-b-3xl',
+        'bg-accent'
       )}
     >
-      {/* <Image
+      <Image
+          alt="hero background"
+          className="z-0 object-cover"
+          draggable="false"
           fill
           src="/images/hero-bg.png"
-          alt="hero background"
-          draggable="false"
-          className="z-0 object-cover"
-        /> */}
+          />
 
       {/* <div className="absolute inset-0 z-10 w-full h-full bg-radial from-0% to-primary-700 rounded-b-3xl" /> */}
 
-      <div
+      {/* <div
         className={clsx(
           'container relative z-20 flex justify-start gap-15 text-background w-full mt-15',
           'max-md:flex-1 md:mt-25 md:px-10 max-lg:max-w-none max-lg:p-15 max-lg:pe-20 max-lg:gap-0 lg:justify-between lg:gap-10 max-lg:items-center max-lg:py-10 max-md:flex-col-reverse'
         )}
-      >
+      > */}
         {/* <div className="flex flex-col w-1/2 gap-5 pt-10 md:pt-20 md:items-start lg:pt-33 lg:gap-10 max-lg:w-full">
           <div className="flex flex-col text-3xl font-bold max-md:items-center md:text-3xl lg:text-5xl">
             <span>تعاملات کاربردی آسان با</span>
@@ -136,7 +136,7 @@ export default function HomeHeroSection() {
         </div> */}
 
         {/* <div className="relative flex justify-center items-end w-1/2 aspect-square"></div> */}
-      </div>
+      {/* </div> */}
 
       {/* <Button
         className="z-20 flex items-center justify-center rounded-full bg-background max-md:hidden md:w-14 md:h-14 md:min-w-14 md:min-h-14 md:max-w-14 md:max-h-14 lg:w-17 lg:h-17 lg:min-w-17 lg:min-h-17 lg:max-w-17 lg:max-h-17 animate-bounce"

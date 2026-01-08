@@ -48,11 +48,11 @@ export const links: HeaderLinksInterface[] = [
 
 export function Header() {
   return (
-    <header className="fixed  bg-accent/30   backdrop-blur-3xl inset-x-0 top-0 z-50 py-10 select-none *:outline-none">
+    <header className="fixed inset-x-0 top-0 z-50 w-full  backdrop-blur-3xl bg-accent  *:container *:mx-auto md:py-5">
       <nav className="container flex items-center mx-auto justify-between px-6 gap-16 text-background">
         <MobileDrawer className="md:hidden" links={links} />
 
-        <Link  className="flex items-center gap-2.5" draggable="false" href="/">
+        <Link className="flex items-center gap-2.5" draggable="false" href="/">
           <Image
             alt="circle logo"
             height={32}
@@ -64,33 +64,32 @@ export function Header() {
           <span className="text-2xl font-extrabold">کلاهت باکس</span>
         </Link>
 
-        <ul className="md:flex hidden items-center gap-6.5 flex-1">
+        <div className="md:flex hidden items-center gap-6.5 flex-1">
           {links.map((link, id) => (
-            <li key={id}>
-              <Link
-                className={clsx(
-                  'text-background/70',
-                  link.endContent && 'flex items-center gap-2'
-                )}
-                href={link.href}
-              >
-                {link.label}
-                <span className="text-background/80">{link.endContent}</span>
-              </Link>
-            </li>
+            <Link
+              key={id}
+              className={clsx(
+                'text-background',
+                link.endContent && 'flex items-center gap-2'
+              )}
+              href={link.href}
+            >
+              {link.label}
+              <span >{link.endContent}</span>
+            </Link>
           ))}
-        </ul>
+        </div>
 
         <div className="md:flex hidden gap-4 items-center">
           <Button
-            className="bg-surface rounded-2xl py-5.25 px-6 w-auto h-auto flex items-center gap-2"
+            className="bg-surface rounded-2xl py-4 px-5 w-auto h-auto flex items-center gap-2"
             startContent={<ArrowDownTrayIcon className="size-6" />}
           >
             <Link href="/receive-invoice">دریافت پیش فاکتور</Link>
           </Button>
 
           <Button
-            className="py-5.25 px-6 w-auto h-auto flex items-center gap-2 text-background"
+            className="py-4 px-5 w-auto h-auto flex items-center gap-2 text-background"
             variant="ghost"
           >
             <Link href="/login">ورود کاربران</Link>
