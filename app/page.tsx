@@ -63,7 +63,7 @@ const config = {
 
 export default function Home() {
   return (
-    <section className="flex flex-col ">
+    <section className="flex flex-col">
       {/* padding just for development mode  */}
       <HomeHeroSection />
       <div className="container mx-auto px-10">

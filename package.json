@@ -28,6 +28,7 @@
     "vaul": "^1.1.2"
   },
   "devDependencies": {
+    "@nexload-sdk/eslint-config": "^3.0.5",
     "@next/eslint-plugin-next": "16.1.1",
     "@react-types/shared": "3.32.1",
     "@tailwindcss/postcss": "4.1.11",

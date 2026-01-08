@@ -1,14 +1,14 @@
-import Image from 'next/image';
-import Link from 'next/link';
 
 import {
   ArrowDownTrayIcon,
   ChevronDownIcon,
 } from '@heroicons/react/24/outline';
 import { Button } from '@heroui/button';
-import dynamic from 'next/dynamic';
-import { ReactNode } from 'react';
 import clsx from 'clsx';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ReactNode } from 'react';
 
 const MobileDrawer = dynamic(() => import('./drawer'));
 
@@ -48,17 +48,17 @@ export const links: HeaderLinksInterface[] = [
 
 export function Header() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 pt-10 select-none *:outline-none">
+    <header className="fixed  bg-accent/30   backdrop-blur-3xl inset-x-0 top-0 z-50 py-10 select-none *:outline-none">
       <nav className="container flex items-center mx-auto justify-between px-6 gap-16 text-background">
         <MobileDrawer className="md:hidden" links={links} />
 
-        <Link className="flex items-center gap-2.5" href="/" draggable="false">
+        <Link  className="flex items-center gap-2.5" draggable="false" href="/">
           <Image
             alt="circle logo"
-            src="/logo.png"
             height={32}
-            width={32}
             priority
+            src="/logo.png"
+            width={32}
           />
 
           <span className="text-2xl font-extrabold">کلاهت باکس</span>
@@ -68,11 +68,11 @@ export function Header() {
           {links.map((link, id) => (
             <li key={id}>
               <Link
-                href={link.href}
                 className={clsx(
                   'text-background/70',
                   link.endContent && 'flex items-center gap-2'
                 )}
+                href={link.href}
               >
                 {link.label}
                 <span className="text-background/80">{link.endContent}</span>
@@ -83,22 +83,18 @@ export function Header() {
 
         <div className="md:flex hidden gap-4 items-center">
           <Button
-            color="primary"
-            className="py-5.25 px-6 w-auto h-auto flex items-center gap-2"
+            className="bg-surface rounded-2xl py-5.25 px-6 w-auto h-auto flex items-center gap-2"
             startContent={<ArrowDownTrayIcon className="size-6" />}
           >
             <Link href="/receive-invoice">دریافت پیش فاکتور</Link>
           </Button>
 
           <Button
-            className="py-5.25 px-6 w-auto h-auto flex items-center gap-2 text-background" 
-            variant='ghost'
+            className="py-5.25 px-6 w-auto h-auto flex items-center gap-2 text-background"
+            variant="ghost"
           >
-          <Link href="/login">
-            ورود کاربران
-          </Link>
+            <Link href="/login">ورود کاربران</Link>
           </Button>
-
         </div>
       </nav>
     </header>
