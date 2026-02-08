@@ -48,7 +48,7 @@ export const links: HeaderLinksInterface[] = [
 
 export function Header() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 w-full  backdrop-blur-3xl bg-accent  *:container *:mx-auto md:py-5">
+    <header className="fixed inset-x-0 top-0 z-50 w-full backdrop-blur-3xl bg-accent  *:container *:mx-auto md:py-5">
       <nav className="container flex items-center mx-auto justify-between px-6 gap-16 text-background">
         <MobileDrawer className="md:hidden" links={links} />
 

@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@import '@heroui/styles';
+@import "tailwindcss";
+@import "@heroui/styles";
 
 @layer base {
   :root {
@@ -15,8 +15,8 @@
     --overlay: oklch(96.5% 0.001 270);
     --overlay-foreground: oklch(55% 0 0);
     --overlay-soft-foreground: oklch(60% 0 0);
-  --accent-muted: oklch(38.227% 0.13678 273.829);
-  --overlay-muted-foreground: oklch(60% 0 0);
+    --accent-muted: oklch(38.227% 0.13678 273.829);
+    --overlay-muted-foreground: oklch(60% 0 0);
 
     --accent: oklch(26.499% 0.09882 273.598);
     --accent-foreground: oklch(96.312% 0.01744 264.536);
