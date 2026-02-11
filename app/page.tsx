@@ -1,3 +1,9 @@
+import BlogSection from '@/components/common/_blog-section';
+import AboutUsSection from '@/components/landing/about-us-section';
+import BrandStorySection from '@/components/landing/brand-story-section';
+import HomeHeroSection from '@/components/landing/home-hero-section';
+import TopProducts from '@/components/pages/home/top-products-sections';
+// 
 import BlogSection from "@/components/common/_blog-section";
 import AboutUsSection from "@/components/landing/about-us-section";
 import BrandStorySection from "@/components/landing/brand-story-section";
@@ -71,15 +77,16 @@ const config = {
 
 export default function Home() {
   return (
-    <section className="flex flex-col">
+    <section className="flex flex-col pt-30">
       {/* padding just for development mode  */}
-      <HomeHeroSection />
-      <div className="container mx-auto px-10">
+      {/* <HomeHeroSection /> */}
+ <div className="container mx-auto px-10">
         <AboutUsSection />
         <HorizontalInfiniteScroll images={config.bransImages} />
         <BrandStorySection  />
         <BlogSection blog={config.blogData} />
-      </div>
+      </div> 
+      <TopProducts/>
     </section>
   );
 }
