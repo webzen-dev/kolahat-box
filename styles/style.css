@@ -1,0 +1,17 @@
+@keyframes horizontal-infinite-scroll-animation {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.horizontal-infinite-scroll {
+
+  animation: horizontal-infinite-scroll-animation 10s linear infinite;
+}
+
+.horizontal-infinite-scroll-container:hover .horizontal-infinite-scroll {
+  animation-play-state: paused;
+}
