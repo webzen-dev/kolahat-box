@@ -1,3 +1,26 @@
 @import "tailwindcss";
+@import "@heroui/styles";
 
-@config "../tailwind.config.js"
+@layer base {
+  :root {
+    --white: oklch(100% 0 0);
+    --black: oklch(0% 0 0);
+    --snow: oklch(99.2% 0.001 270);
+    --eclipse: oklch(16.5% 0.004 275);
+
+    --background: oklch(100% 0 0);
+    --foreground: oklch(0% 0 0);
+    --surface: oklch(55% 0.22 264);
+    --surface-foreground: oklch(100% 0 0);
+    --overlay: oklch(96.5% 0.001 270);
+    --overlay-foreground: oklch(55% 0 0);
+    --overlay-soft-foreground: oklch(60% 0 0);
+    --accent-muted: oklch(38.227% 0.13678 273.829);
+    --overlay-muted-foreground: oklch(60% 0 0);
+
+    --accent: oklch(26.499% 0.09882 273.598);
+    --accent-foreground: oklch(96.312% 0.01744 264.536);
+    --accent-soft: oklch(38.227% 0.13678 273.829);
+    --border: oklch(94.912% 0.00011 271.152);
+  }
+}
