@@ -1,7 +1,10 @@
 export interface Category {
   id: number;
   title: string;
+  TitleEn?:string;
   parent?: (number | null) | Category;
+  image?:string
+  color?:string
   breadcrumbs?:
     | {
         doc?: (number | null) | Category;
