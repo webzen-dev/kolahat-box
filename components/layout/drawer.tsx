@@ -1,18 +1,17 @@
-'use client';
-
-import Image from 'next/image';
-import Link from 'next/link';
-
-import clsx from 'clsx';
+"use client";
 
 import {
   ArrowDownTrayIcon,
   Bars2Icon,
   XMarkIcon,
-} from '@heroicons/react/24/outline';
-import { Button } from '@heroui/button';
-import { Drawer } from 'vaul';
-import { HeaderLinksInterface } from './header';
+} from "@heroicons/react/24/outline";
+import { Button } from "@heroui/react";
+import clsx from "clsx";
+import Image from "next/image";
+import Link from "next/link";
+import { Drawer } from "vaul";
+
+import { HeaderLinksInterface } from "./header";
 
 interface MobileDrawerProps {
   className: string;
@@ -24,9 +23,8 @@ export default function MobileDrawer({ className, links }: MobileDrawerProps) {
     <Drawer.Root direction="right">
       <Drawer.Trigger asChild>
         <Button
-          className={clsx('bg-backgound! w-14 h-14', className)}
+          className={clsx("bg-backgound! w-14 h-14", className)}
           isIconOnly
-          radius="full"
         >
           <Bars2Icon className="w-6 h-6" />
         </Button>
@@ -41,9 +39,9 @@ export default function MobileDrawer({ className, links }: MobileDrawerProps) {
               <Link className="flex items-center gap-2.5" href="/">
                 <Image
                   alt="circle logo"
+                  height={32}
                   priority
                   src="/logo.png"
-                  height={32}
                   width={32}
                 />
 
@@ -51,7 +49,7 @@ export default function MobileDrawer({ className, links }: MobileDrawerProps) {
               </Link>
 
               <Drawer.Close asChild>
-                <Button className="bg-foreground/5!" isIconOnly variant="light">
+                <Button className="bg-foreground/5!" isIconOnly>
                   <XMarkIcon className="w-6 h-6" />
                 </Button>
               </Drawer.Close>
@@ -62,11 +60,11 @@ export default function MobileDrawer({ className, links }: MobileDrawerProps) {
             {links.map((link, id) => (
               <li key={id}>
                 <Link
-                  href={link.href}
                   className={clsx(
-                    'text-foreground/70',
-                    link.endContent && 'flex items-center gap-4'
+                    "text-foreground/70",
+                    link.endContent && "flex items-center gap-4",
                   )}
+                  href={link.href}
                 >
                   {link.label}
                   <span className="text-foreground/80">{link.endContent}</span>
@@ -77,17 +75,16 @@ export default function MobileDrawer({ className, links }: MobileDrawerProps) {
 
           <div className="flex flex-col gap-4 items-center">
             <Button
-              color="primary"
-              as={Link}
               className="py-5.25 px-6 w-auto h-auto flex items-center gap-2"
               dir="ltr"
-              startContent={<ArrowDownTrayIcon className="size-6" />}
-              href="/receive-invoice"
             >
-              دریافت پیش فاکتور
+              <Link href="/">
+                دریافت پیش فاکتور
+                <ArrowDownTrayIcon className="size-6" />
+              </Link>
             </Button>
 
-            <Link href="/login" className="text-foreground px-4 py-5.25">
+            <Link className="text-foreground px-4 py-5.25" href="/login">
               ورود کاربران
             </Link>
           </div>

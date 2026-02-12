@@ -37,6 +37,7 @@ const categoryTopProduct: Category[] = [
     createdAt: new Date().toISOString(),
   },
 ];
+
 const config = {
   blogData: [
     {

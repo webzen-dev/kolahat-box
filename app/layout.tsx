@@ -1,22 +1,18 @@
-import "@/styles/globals.css";
-import "@/styles/style.css";
 import clsx from "clsx";
 import { Metadata, Viewport } from "next";
-import { Providers } from "./providers";
-import { siteConfig } from "@/config/site";
 import { Vazirmatn } from "next/font/google";
-import { Header } from "@/components/layout/header";
+
 import Footer from "@/components/layout/Footer";
+import { Header } from "@/components/layout/header";
+import { siteConfig } from "@/config/site";
+import "@/styles/globals.css";
+import "@/styles/style.css";
 
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
   },
-  // description: siteConfig.description,
-  // icons: {
-  //   icon: "/favicon.ico",
-  // },
 };
 
 const vazirmatn = Vazirmatn({
@@ -38,20 +34,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning lang="fa-IR" dir="rtl">
+    <html dir="rtl" lang="fa-IR" suppressHydrationWarning>
       <head />
       <body
         className={clsx(
           "min-h-screen text-foreground bg-background font-sans antialiased",
-          vazirmatn.variable
-          
+          vazirmatn.variable,
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "ligh" }}>
-          <Header />
-          <main className="mx-auto flex-grow">{children}</main>
-          <Footer/>
-        </Providers>
+        <Header />
+        <main className="mx-auto flex-grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );
