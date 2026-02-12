@@ -9,7 +9,7 @@ export default function HorizontalInfiniteScroll({
   return (
     <div
       className={clsx(
-        "flex flex-nowrap items-center overflow-hidden",
+        "flex flex-nowrap items-center overflow-x-hidden",
         "select-none mb-30 horizontal-infinite-scroll-container group",
       )}
     >
@@ -17,18 +17,18 @@ export default function HorizontalInfiniteScroll({
         <div
           key={i}
           className={clsx(
-            "flex items-center justify-around min-w-full",
-            "gap-4 pe-4 horizontal-infinite-scroll",
+            "flex items-center justify-around shrink-0 min-w-full",
+            "gap-2 md:gap-4 pe-4 relative horizontal-infinite-scroll",
           )}
         >
           {images.map((img, i) => (
             <Image
-              src={img}
               key={i}
-              height={64}
-              width={200}
               alt="برند منتخب"
-              className="object-contain max-h-16 min-h-16 group-hover:grayscale hover:!grayscale-0 transition-[filter]"
+              className="object-contain max-h-16 max-w-fit min-h-16 group-hover:grayscale hover:!grayscale-0 group-hover:opacity-80 hover:opacity-100 transition-[filter] duration-200"
+              height={64}
+              src={img}
+              width={200}
             />
           ))}
         </div>

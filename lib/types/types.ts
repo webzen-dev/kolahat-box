@@ -13,7 +13,7 @@ export interface Category {
         id?: string | null;
       }[]
     | null;
-  slug?: string | null;
+  slug: string;
   slugLock?: boolean | null;
   products?: {
     docs?: (number | Product)[];

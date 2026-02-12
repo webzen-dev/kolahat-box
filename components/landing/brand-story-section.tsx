@@ -109,11 +109,11 @@ export default function BrandStorySection() {
                 )}
               >
                 <Image
-                  src={img.src}
                   alt={`brand story image ${i + 1}`}
-                  width={400}
-                  height={400}
                   className="object-contain min-w-full grayscale hover:grayscale-0 transition-all duration-500 rounded-2xl"
+                  height={400}
+                  src={img.src}
+                  width={400}
                 />
               </div>
             ))}
