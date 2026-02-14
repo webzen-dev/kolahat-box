@@ -3,6 +3,7 @@ import AboutUsSection from "@/components/landing/about-us-section";
 import BrandStorySection from "@/components/landing/brand-story-section";
 // import HomeHeroSection from '@/components/landing/home-hero-section';
 import HorizontalInfiniteScroll from "@/components/landing/horizontal-infinite-scroll";
+import CustomOrder from "@/components/pages/home/custom-order-section";
 import ProductCategory from "@/components/pages/home/product-category-section";
 import TopProducts from "@/components/pages/home/top-products-sections";
 import { Category, Product } from "@/lib/types/types";
@@ -347,17 +348,18 @@ export default function Home() {
       {/* padding just for development mode  */}
       {/* <HomeHeroSection /> */}
       <div className="container mx-auto px-10">
-        <AboutUsSection />
+        {/* <AboutUsSection />
         <HorizontalInfiniteScroll images={config.bransImages} />
         <ProductCategory category={config.productsCategory} />
-        <BrandStorySection />
+        <BrandStorySection /> */}
         {/* <BlogSection blog={config.blogData} /> */}
+        <CustomOrder/>
       </div>
-      
+{/*       
       <TopProducts
         category={categoryTopProduct}
         products={config.TopProductsList}
-      />
+      /> */}
     </section>
   );
 }
