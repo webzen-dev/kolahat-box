@@ -2,33 +2,20 @@ import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { Button } from "@heroui/react";
 import clsx from "clsx";
 import Image from "next/image";
+import { ReactNode } from "react";
 
-const customOrderBoxData = [
-  {
-    id: 1,
-    title: "ارسال ایده و لوگو",
-    description:
-      "کافیست ارسال ایده و لوگو انجام دهید، تولید کلاه شما آغاز خواهد شد",
+type item = {
+  id: number;
+  title: string;
+  description: string;
+  icon: ReactNode;
+};
 
-    icon: <PaperAirplaneIcon className="w-6 h-6 text-surface" />,
-  },
-  {
-    id: 2,
-    title: "تایید طرح و پیش فاکتور",
-    description:
-      "با تایید طرح و پیش فاکتور، سفارش شما وارد مرحله تولید خواهد شد",
-    icon: <PaperAirplaneIcon className="w-6 h-6 text-surface" />,
-  },
-  {
-    id: 3,
-    title: "تولید و تحویل سریع",
-    description:
-      "پس از تایید، تولید و تحویل سریع کلاه‌ها طبق زمان‌بندی انجام می‌شود",
-    icon: <PaperAirplaneIcon className="w-6 h-6 text-surface" />,
-  },
-];
+interface CustomOrderProps {
+  data: item[];
+}
 
-export default function CustomOrder() {
+export default function CustomOrder({ data }: CustomOrderProps) {
   return (
     <section className="flex flex-col gap-10 md:gap-28 mb-32">
       {/* custom order header */}
@@ -64,7 +51,7 @@ export default function CustomOrder() {
           "md:flex-row lg:flex-nowrap",
         )}
       >
-        {customOrderBoxData.map((item, idx) => (
+        {data.map((item, idx) => (
           <div key={idx} className="flex-1/3 flex flex-col gap-10">
             <div
               className={clsx(

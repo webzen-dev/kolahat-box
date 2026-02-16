@@ -7,6 +7,7 @@ import CustomOrder from "@/components/pages/home/custom-order-section";
 import ProductCategory from "@/components/pages/home/product-category-section";
 import TopProducts from "@/components/pages/home/top-products-sections";
 import { Category, Product } from "@/lib/types/types";
+import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 
 const categoryTopProduct: Category[] = [
   {
@@ -340,6 +341,31 @@ const config = {
       createdAt: new Date().toISOString(),
     },
   ] as Product[],
+
+  customOrderBoxData: [
+    {
+      id: 1,
+      title: "ارسال ایده و لوگو",
+      description:
+        "کافیست ارسال ایده و لوگو انجام دهید، تولید کلاه شما آغاز خواهد شد",
+
+      icon: <PaperAirplaneIcon className="w-6 h-6 text-surface" />,
+    },
+    {
+      id: 2,
+      title: "تایید طرح و پیش فاکتور",
+      description:
+        "با تایید طرح و پیش فاکتور، سفارش شما وارد مرحله تولید خواهد شد",
+      icon: <PaperAirplaneIcon className="w-6 h-6 text-surface" />,
+    },
+    {
+      id: 3,
+      title: "تولید و تحویل سریع",
+      description:
+        "پس از تایید، تولید و تحویل سریع کلاه‌ها طبق زمان‌بندی انجام می‌شود",
+      icon: <PaperAirplaneIcon className="w-6 h-6 text-surface" />,
+    },
+  ],
 };
 
 export default function Home() {
@@ -353,9 +379,9 @@ export default function Home() {
         <ProductCategory category={config.productsCategory} />
         <BrandStorySection />
         {/* <BlogSection blog={config.blogData} /> */}
-        <CustomOrder/>
+        <CustomOrder data={config.customOrderBoxData} />
       </div>
-      
+
       <TopProducts
         category={categoryTopProduct}
         products={config.TopProductsList}
