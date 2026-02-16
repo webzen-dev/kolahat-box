@@ -1,4 +1,6 @@
 // import BlogSection from "@/components/common/_blog-section";
+import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
+
 import AboutUsSection from "@/components/landing/about-us-section";
 import BrandStorySection from "@/components/landing/brand-story-section";
 // import HomeHeroSection from '@/components/landing/home-hero-section';
@@ -7,7 +9,7 @@ import CustomOrder from "@/components/pages/home/custom-order-section";
 import ProductCategory from "@/components/pages/home/product-category-section";
 import TopProducts from "@/components/pages/home/top-products-sections";
 import { Category, Product } from "@/lib/types/types";
-import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
+
 
 const categoryTopProduct: Category[] = [
   {

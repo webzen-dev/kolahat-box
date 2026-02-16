@@ -1,4 +1,3 @@
-import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { Button } from "@heroui/react";
 import clsx from "clsx";
 import Image from "next/image";
