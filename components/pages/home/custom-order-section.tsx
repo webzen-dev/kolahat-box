@@ -10,27 +10,27 @@ const customOrderBoxData = [
     description:
       "کافیست ارسال ایده و لوگو انجام دهید، تولید کلاه شما آغاز خواهد شد",
 
-    icon: <PaperAirplaneIcon className="w-5 h-5 text-surface" />,
+    icon: <PaperAirplaneIcon className="w-6 h-6 text-surface" />,
   },
   {
     id: 2,
     title: "تایید طرح و پیش فاکتور",
     description:
       "با تایید طرح و پیش فاکتور، سفارش شما وارد مرحله تولید خواهد شد",
-    icon: <PaperAirplaneIcon className="w-5 h-5 text-surface" />,
+    icon: <PaperAirplaneIcon className="w-6 h-6 text-surface" />,
   },
   {
     id: 3,
     title: "تولید و تحویل سریع",
     description:
       "پس از تایید، تولید و تحویل سریع کلاه‌ها طبق زمان‌بندی انجام می‌شود",
-    icon: <PaperAirplaneIcon className="w-5 h-5 text-surface" />,
+    icon: <PaperAirplaneIcon className="w-6 h-6 text-surface" />,
   },
 ];
 
 export default function CustomOrder() {
   return (
-    <section className="flex flex-col gap-10 md:gap-28">
+    <section className="flex flex-col gap-10 md:gap-28 mb-32">
       {/* custom order header */}
       <div className="flex items-end justify-between">
         <div className="flex flex-col gap-2">
@@ -56,23 +56,39 @@ export default function CustomOrder() {
         </Button>
       </div>
 
-      <div className="flex p-10 border-1 border-foreground/10 rounded-2xl gap-10 flex-col md:flex-row">
+      <div
+        className={clsx(
+          "flex flex-col flex-wrap",
+          "p-10 gap-10 ",
+          "border border-foreground/10 rounded-2xl",
+          "md:flex-row lg:flex-nowrap",
+        )}
+      >
         {customOrderBoxData.map((item, idx) => (
           <div key={idx} className="flex-1/3 flex flex-col gap-10">
-            <div className="w-16 h-16 rounded-full border border-foreground/10 flex justify-center items-center">
+            <div
+              className={clsx(
+                "flex items-center justify-center w-16 h-16",
+                "border border-foreground/10 rounded-full",
+              )}
+            >
               {item.icon}
             </div>
 
             {/* text box */}
             <div
               className={clsx(
-                "flex flex-col gap-6 relative",
-                "after:content-[''] after:absolute after:w-2.5 after:h-2.5 after:rounded-full after:bg-surface after:-top-1",
-                "before:content-[''] before:w-1/2 before:h-0.5 before:bg-foreground/10 before:ms-8",
+                "relative flex flex-col gap-6",
+                // after
+                "after:content-[''] after:absolute after:-top-1",
+                "after:w-2.5 after:h-2.5 after:rounded-full after:bg-surface",
+                // before
+                "before:content-[''] before:ms-8 before:h-0.5 before:w-1/2",
+                "before:bg-foreground/10 last:before:w-full",
               )}
             >
               <b className="text-lg">
-                {item.id.toLocaleString("fa-IR")}.{item.title}
+                {item.id.toLocaleString("fa-IR")} . {item.title}
               </b>
 
               <p className="text-foreground/40 text-base font-medium">
@@ -83,13 +99,12 @@ export default function CustomOrder() {
         ))}
       </div>
 
-      
-        <Button
-          className="bg-foreground text-background w-full h-16 rounded-xl md:hidden"
-          variant="secondary"
-        >
-          شروع مشاوره رایگان
-        </Button>
+      <Button
+        className="bg-foreground text-background w-full h-16 rounded-xl md:hidden"
+        variant="secondary"
+      >
+        شروع مشاوره رایگان
+      </Button>
     </section>
   );
 }

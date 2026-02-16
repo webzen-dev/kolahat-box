@@ -348,18 +348,18 @@ export default function Home() {
       {/* padding just for development mode  */}
       {/* <HomeHeroSection /> */}
       <div className="container mx-auto px-10">
-        {/* <AboutUsSection />
+        <AboutUsSection />
         <HorizontalInfiniteScroll images={config.bransImages} />
         <ProductCategory category={config.productsCategory} />
-        <BrandStorySection /> */}
+        <BrandStorySection />
         {/* <BlogSection blog={config.blogData} /> */}
         <CustomOrder/>
       </div>
-{/*       
+      
       <TopProducts
         category={categoryTopProduct}
         products={config.TopProductsList}
-      /> */}
+      />
     </section>
   );
 }
