@@ -11,7 +11,7 @@ function _CategoryItem({ item }: { item: Category }) {
       className={clsx(
         "relative h-full aspect-square rounded-4xl shrink-0",
         "flex items-center justify-center gap-8",
-        "p-4 pb-16",
+        "p-4 pb-16 overflow-hidden group",
         "after:content-[''] after:absolute after:inset-0 after:rounded-4xl",
         "after:bg-gradient-to-t after:from-foreground/50",
       )}
@@ -23,7 +23,7 @@ function _CategoryItem({ item }: { item: Category }) {
     >
       <Image
         alt={item.TitleEn || item.title}
-        className="object-contain max-w-24 max-h-24 md:max-w-40 md:max-h-40"
+        className="object-contain max-w-24 max-h-24 md:max-w-40 md:max-h-40 group-hover:scale-125 transition-[scale] duration-300"
         height={160}
         src={item?.image || "/images/poster.png"}
         width={160}

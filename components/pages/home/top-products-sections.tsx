@@ -68,7 +68,7 @@ export default function TopProducts({
 }) {
   const { refCarousel, api } = useCarousel();
   return (
-    <section className="bg-surface flex w-full items-center flex-col pb-22 ">
+    <section className="bg-surface flex w-full items-center flex-col pb-22 mb-30">
       <div className="container flex flex-col">
         {/* top products header -_-  */}
 

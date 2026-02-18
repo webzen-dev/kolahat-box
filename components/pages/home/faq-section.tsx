@@ -192,7 +192,7 @@ export default function Faq() {
       <FaqHeader />
 
       <div className="flex flex-col gap-4">
-        {faqDemoData.map((item) => (
+        {faqDemoData.slice(0,4).map((item) => (
           <RowItem
             key={item.id}
             item={item}
