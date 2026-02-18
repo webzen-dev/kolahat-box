@@ -9,6 +9,7 @@ import CustomOrder from "@/components/pages/home/custom-order-section";
 import ProductCategory from "@/components/pages/home/product-category-section";
 import TopProducts from "@/components/pages/home/top-products-sections";
 import { Category, Product } from "@/lib/types/types";
+import Faq from "@/components/pages/home/faq-section";
 
 
 const categoryTopProduct: Category[] = [
@@ -376,18 +377,20 @@ export default function Home() {
       {/* padding just for development mode  */}
       {/* <HomeHeroSection /> */}
       <div className="container mx-auto px-10">
-        <AboutUsSection />
+        <Faq/>
+        {/* <AboutUsSection />
         <HorizontalInfiniteScroll images={config.bransImages} />
         <ProductCategory category={config.productsCategory} />
-        <BrandStorySection />
+        <BrandStorySection /> */}
         {/* <BlogSection blog={config.blogData} /> */}
-        <CustomOrder data={config.customOrderBoxData} />
+
+        {/* <CustomOrder data={config.customOrderBoxData} /> */}
       </div>
 
-      <TopProducts
+      {/* <TopProducts
         category={categoryTopProduct}
         products={config.TopProductsList}
-      />
+      /> */}
     </section>
   );
 }
