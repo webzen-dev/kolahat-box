@@ -13,6 +13,7 @@ export default function TopProductCard({ product }: { product: Product }) {
           "pe-6 group flex-[80%_0_0]",
           "md:flex-[50%_0_0] lg:flex-[33.33%_0_0] xl:flex-[25%_0_0] 2xl:flex-[20%_0_0]",
         )}
+        
         draggable={false}
         href={product.slug}
       >
