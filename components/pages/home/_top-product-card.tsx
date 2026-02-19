@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Product } from "@/lib/types/types";
-
+// 
 export default function TopProductCard({ product }: { product: Product }) {
   if (product.slug)
     return (
@@ -67,7 +67,7 @@ export default function TopProductCard({ product }: { product: Product }) {
             <BuildingStorefrontIcon
               className={clsx(
                 "h-15 w-15 p-5 rounded-full",
-                "bg-surface-quaternary text-background",
+                "bg-surface text-background",
               )}
             />
           </div>

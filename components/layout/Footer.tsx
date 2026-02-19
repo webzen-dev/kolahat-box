@@ -107,7 +107,7 @@ const footerData: footerDataType[] = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gradient-to-br from-accent to-accent/90 flex justify-center font-sans text-background overflow-hidden px-7 mt-40">
+    <footer className="relative bg-gradient-to-br from-accent to-accent/90 flex justify-center text-background overflow-hidden px-7 mt-40">
       <Image
         alt="hero background"
         className="z-0 object-cover md:mr-[33.333%] max-md:mt-[60%] max-md:max-h-[50%]"

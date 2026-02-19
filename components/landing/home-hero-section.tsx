@@ -5,7 +5,7 @@ import {
   PlayCircleIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
-import { Button } from "@heroui/button";
+import { Button } from "@heroui/react";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
@@ -66,7 +66,7 @@ export default function HomeHeroSection() {
   return (
     <div
       className={clsx(
-        "relative flex flex-col items-center justify-center w-full h-[90vh] rounded-b-3xl",
+        "relative flex flex-col items-center justify-center w-full h-[90vh] rounded-b-3xl mb-36",
         "bg-accent",
       )}
     >

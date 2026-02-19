@@ -1,15 +1,17 @@
 // import BlogSection from "@/components/common/_blog-section";
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 
-import AboutUsSection from "@/components/landing/about-us-section";
-import BrandStorySection from "@/components/landing/brand-story-section";
+import HomeHeroSection from "@/components/landing/home-hero-section";
+import AboutUsSection from "@/components/pages/home/about-us-section";
+import BlogSection from "@/components/pages/home/blog-section";
+import BrandStorySection from "@/components/pages/home/brand-story-section";
 // import HomeHeroSection from '@/components/landing/home-hero-section';
-import HorizontalInfiniteScroll from "@/components/landing/horizontal-infinite-scroll";
 import CustomOrder from "@/components/pages/home/custom-order-section";
+import Faq from "@/components/pages/home/faq-section";
+import HorizontalInfiniteScroll from "@/components/pages/home/horizontal-infinite-scroll";
 import ProductCategory from "@/components/pages/home/product-category-section";
 import TopProducts from "@/components/pages/home/top-products-sections";
 import { Category, Product } from "@/lib/types/types";
-import Faq from "@/components/pages/home/faq-section";
 
 const categoryTopProduct: Category[] = [
   {
@@ -216,6 +218,7 @@ const config = {
   ] as Category[],
 
   TopProductsList: [
+    categoryTopProduct,
     {
       id: 1,
       name: "کلاه کلاسیک آبی",
@@ -368,19 +371,136 @@ const config = {
       icon: <PaperAirplaneIcon className="w-6 h-6 text-surface" />,
     },
   ],
+
+  brandStoryImages: [
+    {
+      src: "/images/brand-story/b5a3952bf12ec16ef0dfb92bac90e9fa1a73d6e5.png",
+      column: 0,
+    },
+    {
+      src: "/images/brand-story/dd859fb93c1f34fa215efd72411f8cf521b61926.png",
+      column: 0,
+    },
+    {
+      src: "/images/brand-story/8e6e296bb9e7125578404459a758cbbf2e4517fb.png",
+      column: 0,
+    },
+    {
+      src: "/images/brand-story/2f6de647cd6bb6c92ceb9af7cbfb1824558489ae.png",
+      column: 1,
+    },
+    {
+      src: "/images/brand-story/9c003407313408e36896461d7ba6bf9d272215bc.png",
+      column: 1,
+    },
+    {
+      src: "/images/brand-story/0e637a06e204e4302a772801d867e5ae229a5cd6.png",
+      column: 2,
+    },
+    {
+      src: "/images/brand-story/b35d7d6f19fe3c443b49e9d1f3d485ecee90700c.png",
+      column: 2,
+    },
+    {
+      src: "/images/brand-story/be70c767e2b8219267b67e2c9b7692699023601e.png",
+      column: 2,
+    },
+    {
+      src: "/images/brand-story/c2b3450a855228169b169dcd1225e69ad7b2bd47.png",
+      column: 2,
+    },
+    {
+      src: "/images/brand-story/1ab7ebf8bfecc8e277232580aefac9098ee00096.png",
+      column: 3,
+    },
+    {
+      src: "/images/brand-story/d984b3fb45a22cb639aacbccaa72be85d57dc553.png",
+      column: 3,
+    },
+  ],
+
+  faqDemoData: [
+    {
+      id: 1,
+      question: "این وبسایت چه هدفی دارد؟",
+      answer:
+        "هدف این وبسایت ارائه مقالات آموزشی و کاربردی در حوزه توسعه فرانت‌اند و طراحی رابط کاربری است تا کاربران بتوانند مهارت‌های خود را به‌صورت عملی تقویت کنند.",
+    },
+    {
+      id: 2,
+      question: "چگونه می‌توانم در سایت ثبت‌نام کنم؟",
+      answer:
+        "با کلیک روی دکمه ثبت‌نام در بالای صفحه و وارد کردن اطلاعات موردنیاز، حساب کاربری شما در چند مرحله ساده ایجاد خواهد شد.",
+    },
+    {
+      id: 3,
+      question: "آیا استفاده از مطالب سایت رایگان است؟",
+      answer:
+        "بخش زیادی از محتوا رایگان است، اما برخی دوره‌ها و آموزش‌های تخصصی تنها برای کاربران ویژه در دسترس هستند.",
+    },
+    {
+      id: 4,
+      question: "چگونه می‌توانم به مقالات جدید دسترسی پیدا کنم؟",
+      answer:
+        "مقالات جدید در بخش «آخرین مطالب» صفحه اصلی نمایش داده می‌شوند و همچنین از طریق دسته‌بندی‌ها و جستجو قابل دسترسی هستند.",
+    },
+    {
+      id: 5,
+      question: "آیا امکان دانلود مطالب وجود دارد؟",
+      answer:
+        "در صورت فعال بودن گزینه دانلود برای یک مقاله یا دوره، دکمه دانلود در همان صفحه نمایش داده می‌شود.",
+    },
+    {
+      id: 6,
+      question: "چطور می‌توانم با پشتیبانی تماس بگیرم؟",
+      answer:
+        "از طریق فرم تماس با ما در پایین صفحه یا ارسال ایمیل به آدرس درج‌شده در بخش پشتیبانی می‌توانید با تیم ما در ارتباط باشید.",
+    },
+    {
+      id: 7,
+      question: "آیا سایت نسخه موبایل دارد؟",
+      answer:
+        "بله، طراحی سایت کاملاً ریسپانسیو است و در موبایل، تبلت و دسکتاپ تجربه کاربری بهینه ارائه می‌دهد.",
+    },
+    {
+      id: 8,
+      question: "آیا امکان ارسال دیدگاه زیر مقالات وجود دارد؟",
+      answer:
+        "کاربران ثبت‌نام‌شده می‌توانند زیر هر مقاله دیدگاه خود را ثبت کنند و در بحث‌ها شرکت کنند.",
+    },
+    {
+      id: 9,
+      question: "چگونه می‌توانم رمز عبور خود را بازیابی کنم؟",
+      answer:
+        "در صفحه ورود، گزینه «فراموشی رمز عبور» را انتخاب کرده و با وارد کردن ایمیل خود، لینک بازیابی برای شما ارسال خواهد شد.",
+    },
+    {
+      id: 10,
+      question: "آیا امکان پیشنهاد موضوع جدید وجود دارد؟",
+      answer:
+        "بله، کاربران می‌توانند از طریق بخش پیشنهادات، موضوعات موردنظر خود را ارسال کنند تا در برنامه تولید محتوا بررسی شوند.",
+    },
+  ],
 };
 
 export default function Home() {
   return (
-    <section className="flex flex-col pt-30">
+    <section className="flex flex-col">
       {/* padding just for development mode  */}
-      {/* <HomeHeroSection /> */}
+      <HomeHeroSection />
+
       <div className="container mx-auto px-10">
-        <AboutUsSection />
+        <AboutUsSection
+          poster="/images/thumbnail.jpg"
+          videoSrc="https://stream.mux.com/maVbJv2GSYNRgS02kPXOOGdJMWGU1mkA019ZUjYE7VU7k"
+        />
+
         <HorizontalInfiniteScroll images={config.bransImages} />
+
         <ProductCategory category={config.productsCategory} />
-        <BrandStorySection />
-        {/* <BlogSection blog={config.blogData} /> */}
+
+        <BrandStorySection images={config.brandStoryImages} />
+
         <CustomOrder data={config.customOrderBoxData} />
       </div>
 
@@ -390,7 +510,8 @@ export default function Home() {
       />
 
       <div className="container mx-auto px-10">
-        <Faq />
+        <BlogSection blog={config.blogData} />
+        <Faq data={config.faqDemoData} />
       </div>
     </section>
   );

@@ -70,7 +70,7 @@ export default function CustomOrder({ data }: CustomOrderProps) {
                 "after:w-2.5 after:h-2.5 after:rounded-full after:bg-surface",
                 // before
                 "before:content-[''] before:ms-8 before:h-0.5 before:w-1/2",
-                "before:bg-foreground/10 last:before:w-full",
+                "before:bg-foreground/10",
               )}
             >
               <b className="text-lg">

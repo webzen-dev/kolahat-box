@@ -1,9 +1,9 @@
-'use client';
 
-import { Button } from '@heroui/button';
+
+import { Button } from '@heroui/react';
 import Link from 'next/link';
+
 import BlogCarousel from './_blog-carousel';
-import { useBlogCarousel } from './_useBlogCarousel';
 
 export interface blogProps {
   id: number;
@@ -15,10 +15,9 @@ export interface blogProps {
 }
 
 export default function BlogSection({ blog }: { blog: blogProps[] }) {
-  const { ref } = useBlogCarousel();
 
   return (
-    <section className="flex flex-col w-full gap-18 mt-40">
+    <section className="flex flex-col w-full gap-18 mb-50">
       {/* header section */}
       <div className="flex justify-between items-center w-full">
         <div className="flex flex-col gap-2">
@@ -27,16 +26,16 @@ export default function BlogSection({ blog }: { blog: blogProps[] }) {
         </div>
 
         <Button
-          className="bg-foreground text-background outline-none"
+          className="bg-foreground text-background py-4 px-6 h-16 rounded-xl hidden md:flex"
           dir="ltr"
           size="lg"
         >
-          <Link href={'/blogs'}>مشاهده همه مقالات</Link>
+          <Link href="/blogs">مشاهده همه مقالات</Link>
         </Button>
       </div>
 
       {/* carousel section */}
-      <BlogCarousel data={blog}  emblaRef={ref} />
+      <BlogCarousel data={blog} />
     </section>
   );
 }

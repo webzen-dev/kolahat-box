@@ -10,7 +10,7 @@ export default function HorizontalInfiniteScroll({
     <div
       className={clsx(
         "flex flex-nowrap items-center overflow-x-hidden",
-        "select-none mb-30 horizontal-infinite-scroll-container group",
+        "select-none mb-36 horizontal-infinite-scroll-container group",
       )}
     >
       {[0, 1].map((_, i) => (
