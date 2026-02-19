@@ -1,27 +1,30 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { blogProps } from './_blog-section';
-import type { EmblaViewportRefType } from 'embla-carousel-react';
-
+"use client"
 import {
   ArrowLongLeftIcon,
   PencilSquareIcon,
 } from '@heroicons/react/24/outline';
+import Image from 'next/image';
+import Link from 'next/link';
+
+import { blogProps } from './blog-section';
+
+import { useCarousel } from '@/lib/hooks/useCarousel';
+
 
 function BlogCard({ blog }: { blog: blogProps }) {
   return (
     <Link
-      href={`/blog/${blog.title}`}
       className="w-full h-full flex flex-col gap-5"
       draggable={false}
+      href={`/blog/${blog.title}`}
     >
-      <div className="relative aspect-16/9 w-full">
+      <div className="relative aspect-16/9 w-full max-h-50">
         <Image
+          alt={blog.title.slice(0, 20)}
+          className="rounded-2xl object-cover"
+          draggable={false}
           fill
           src={blog.image}
-          alt={blog.title.slice(0, 20)}
-          draggable={false}
-          className="rounded-2xl object-cover"
         />
       </div>
 
@@ -51,18 +54,18 @@ function BlogCard({ blog }: { blog: blogProps }) {
 
 export default function BlogCarousel({
   data,
-  emblaRef,
 }: {
   data: blogProps[];
-  emblaRef: EmblaViewportRefType;
 }) {
+    const { refCarousel} = useCarousel();
+
   return (
-    <div ref={emblaRef} className="overflow-hidden">
+    <div ref={refCarousel} className="overflow-hidden">
       <div className="flex touch-pan-y touch-pinch-zoom -me-10">
         {data.map((blog) => (
           <div
-            className="flex-[0_0_80%] md:flex-[0_0_50%] lg:flex-[0_0_33.33%] pe-10 select-none"
             key={blog.id}
+            className="flex-[0_0_80%] md:flex-[0_0_50%] lg:flex-[0_0_33.33%] pe-10 select-none"
           >
             <BlogCard blog={blog} />
           </div>

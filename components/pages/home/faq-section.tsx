@@ -5,68 +5,15 @@ import clsx from "clsx";
 import { motion } from "motion/react";
 import { useState } from "react";
 
-const faqDemoData = [
-  {
-    id: 1,
-    question: "این وبسایت چه هدفی دارد؟",
-    answer:
-      "هدف این وبسایت ارائه مقالات آموزشی و کاربردی در حوزه توسعه فرانت‌اند و طراحی رابط کاربری است تا کاربران بتوانند مهارت‌های خود را به‌صورت عملی تقویت کنند.",
-  },
-  {
-    id: 2,
-    question: "چگونه می‌توانم در سایت ثبت‌نام کنم؟",
-    answer:
-      "با کلیک روی دکمه ثبت‌نام در بالای صفحه و وارد کردن اطلاعات موردنیاز، حساب کاربری شما در چند مرحله ساده ایجاد خواهد شد.",
-  },
-  {
-    id: 3,
-    question: "آیا استفاده از مطالب سایت رایگان است؟",
-    answer:
-      "بخش زیادی از محتوا رایگان است، اما برخی دوره‌ها و آموزش‌های تخصصی تنها برای کاربران ویژه در دسترس هستند.",
-  },
-  {
-    id: 4,
-    question: "چگونه می‌توانم به مقالات جدید دسترسی پیدا کنم؟",
-    answer:
-      "مقالات جدید در بخش «آخرین مطالب» صفحه اصلی نمایش داده می‌شوند و همچنین از طریق دسته‌بندی‌ها و جستجو قابل دسترسی هستند.",
-  },
-  {
-    id: 5,
-    question: "آیا امکان دانلود مطالب وجود دارد؟",
-    answer:
-      "در صورت فعال بودن گزینه دانلود برای یک مقاله یا دوره، دکمه دانلود در همان صفحه نمایش داده می‌شود.",
-  },
-  {
-    id: 6,
-    question: "چطور می‌توانم با پشتیبانی تماس بگیرم؟",
-    answer:
-      "از طریق فرم تماس با ما در پایین صفحه یا ارسال ایمیل به آدرس درج‌شده در بخش پشتیبانی می‌توانید با تیم ما در ارتباط باشید.",
-  },
-  {
-    id: 7,
-    question: "آیا سایت نسخه موبایل دارد؟",
-    answer:
-      "بله، طراحی سایت کاملاً ریسپانسیو است و در موبایل، تبلت و دسکتاپ تجربه کاربری بهینه ارائه می‌دهد.",
-  },
-  {
-    id: 8,
-    question: "آیا امکان ارسال دیدگاه زیر مقالات وجود دارد؟",
-    answer:
-      "کاربران ثبت‌نام‌شده می‌توانند زیر هر مقاله دیدگاه خود را ثبت کنند و در بحث‌ها شرکت کنند.",
-  },
-  {
-    id: 9,
-    question: "چگونه می‌توانم رمز عبور خود را بازیابی کنم؟",
-    answer:
-      "در صفحه ورود، گزینه «فراموشی رمز عبور» را انتخاب کرده و با وارد کردن ایمیل خود، لینک بازیابی برای شما ارسال خواهد شد.",
-  },
-  {
-    id: 10,
-    question: "آیا امکان پیشنهاد موضوع جدید وجود دارد؟",
-    answer:
-      "بله، کاربران می‌توانند از طریق بخش پیشنهادات، موضوعات موردنظر خود را ارسال کنند تا در برنامه تولید محتوا بررسی شوند.",
-  },
-];
+type faqData = {
+  id: number;
+  question: string;
+  answer: string;
+};
+
+interface faqProps {
+  data: faqData[];
+}
 
 const categoryTopProduct = [
   {
@@ -139,7 +86,8 @@ function RowItem({ item, openitemkey, setSelectedKey }: rowItem) {
   return (
     <motion.div
       className={clsx(
-        "pt-8 px-10 flex flex-col rounded-2xl cursor-pointer transition-colors overflow-hidden",
+        "pt-8 px-10 flex flex-col rounded-2xl",
+        "cursor-pointer transition-colors overflow-hidden",
         openitemkey === item.id
           ? "shadow-2xl/10"
           : "border border-foreground/10",
@@ -184,7 +132,7 @@ function RowItem({ item, openitemkey, setSelectedKey }: rowItem) {
   );
 }
 
-export default function Faq() {
+export default function Faq({ data }: faqProps) {
   const [itemKey, setItemKey] = useState<number>(1);
 
   return (
@@ -192,7 +140,7 @@ export default function Faq() {
       <FaqHeader />
 
       <div className="flex flex-col gap-4">
-        {faqDemoData.slice(0,4).map((item) => (
+        {data.slice(0, 4).map((item) => (
           <RowItem
             key={item.id}
             item={item}
