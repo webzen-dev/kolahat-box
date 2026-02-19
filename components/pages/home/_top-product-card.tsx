@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Product } from "@/lib/types/types";
-
+// 
 export default function TopProductCard({ product }: { product: Product }) {
   if (product.slug)
     return (
