@@ -5,9 +5,29 @@ export const siteConfig = {
   description: "this site for kolhat box",
   navItems: [
     {
-      label: "Home",
+      label: "خانه",
       href: "/",
     },
+
+    {
+      label: "فروشگاه",
+      href: "/wholesale",
+    },
+
+    {
+      label: "سفارش اختصاصی",
+      href: "/custom-production",
+    },
+
+    {
+      label: "درباره ما",
+      href: "/about-us",  
+    },
+
+    // {
+    //   label: "تماس با ما",
+    //   href: "/contact-us",
+    // },
   ],
   // navMenuItems: [],
   links: {},

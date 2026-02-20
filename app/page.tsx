@@ -485,10 +485,10 @@ const config = {
 
 export default function Home() {
   return (
-    <section className="flex flex-col">
+    <section className="flex flex-col pt-70 ">
       {/* padding just for development mode  */}
-      <HomeHeroSection />
-
+      {/* <HomeHeroSection /> */}
+{/* 
       <div className="container mx-auto px-10">
         <AboutUsSection
           poster="/images/thumbnail.jpg"
@@ -512,7 +512,7 @@ export default function Home() {
       <div className="container mx-auto px-10">
         <BlogSection blog={config.blogData} />
         <Faq data={config.faqDemoData} />
-      </div>
+      </div> */}
     </section>
   );
 }
