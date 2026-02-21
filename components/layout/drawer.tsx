@@ -1,21 +1,23 @@
 "use client";
 
-import { siteConfig } from "@/config/site";
 import { Bars2Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Button } from "@heroui/react";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { Drawer } from "vaul";
+
 import AuthButton from "./_auth-button";
+
+import { siteConfig } from "@/config/site";
 
 export default function MobileDrawer({ className }: { className?: string }) {
   return (
     <Drawer.Root direction="right">
       <Drawer.Trigger asChild>
         <Button
-          isIconOnly
           className={clsx("bg-bacground! w-14 h-14", className)}
+          isIconOnly
         >
           <Bars2Icon className="w-6 h-6" />
         </Button>
@@ -71,8 +73,8 @@ export default function MobileDrawer({ className }: { className?: string }) {
 
           {/* action button */}
           <AuthButton
-            isAuthenticated={true}
             className="flex bg-accent! w-full"
+            isAuthenticated={true}
           />
         </Drawer.Content>
       </Drawer.Portal>

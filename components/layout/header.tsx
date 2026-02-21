@@ -1,11 +1,11 @@
-import { siteConfig } from "@/config/site";
-import { ArrowDownTrayIcon, UserCircleIcon } from "@heroicons/react/24/outline";
-import { Button, Tooltip } from "@heroui/react";
 import clsx from "clsx";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
+
 import AuthButton from "./_auth-button";
+
+import { siteConfig } from "@/config/site";
 
 const MobileDrawer = dynamic(() => import("./drawer"));
 
@@ -32,8 +32,8 @@ export function Header() {
         >
           <Image
             alt="circle logo"
-            height={32}
             draggable="false"
+            height={32}
             priority
             src="/logo.png"
             width={32}
@@ -50,7 +50,7 @@ export function Header() {
           ))}
         </div>
 
-        <AuthButton isAuthenticated={true} className="hidden md:flex shrink-0" />
+        <AuthButton className="hidden md:flex shrink-0" isAuthenticated={true} />
       </nav>
     </header>
   );

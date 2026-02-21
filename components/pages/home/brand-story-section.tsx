@@ -1,6 +1,9 @@
 import clsx from "clsx";
 import Image from "next/image";
 
+import SectionTabBar from "@/components/section-tab-bar";
+import { Category } from "@/lib/types/types";
+
 function shuffleArray<T>(array: T[]) {
   const shuffled = [...array];
 
@@ -19,8 +22,10 @@ type ImageItemType = {
 
 export default function BrandStorySection({
   images,
+  categoryItems,
 }: {
   images: ImageItemType[];
+  categoryItems: Category[];
 }) {
   const randomizedImages = shuffleArray(images);
   const columns = Array.from({ length: 4 }, (_, i) =>
@@ -32,26 +37,11 @@ export default function BrandStorySection({
   return (
     <section className="container mt-10 mx-auto flex flex-col gap-10 mb-30">
       {/* header */}
-      <div className="flex justify-between flex-col md:flex-row items-start md:items-end gap-6">
-        <div className="flex flex-col gap-2">
-          <span className="text-foreground/40 text-lg">نمونه کارها</span>
-          <b className="text-2xl">داستان برند شما تخصص ما</b>
-        </div>
-
-        <div className="flex items-center gap-10 md:text-lg max-md:w-full justify-between max-md:font-black max-md:gap-5">
-          {["مردانه", "زنانه", "بچه گانه", "بیسبالی", "فدورا"].map(
-            (item, index) => (
-              <b
-                key={index}
-                className={`${index === 1 ? "text-foreground" : "text-foreground/40"} cursor-pointer`}
-              >
-                {item}
-              </b>
-            ),
-          )}
-        </div>
-      </div>
-
+      <SectionTabBar
+        categories={categoryItems}
+        eyebrow="نمونه کارها"
+        title="داستان برند شما تخصص ما"
+      />
       <div
         className={clsx(
           "grid gap-6 w-full",

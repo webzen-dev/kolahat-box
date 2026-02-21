@@ -5,6 +5,8 @@ import clsx from "clsx";
 import { motion } from "motion/react";
 import { useState } from "react";
 
+import SectionTabBar from "@/components/section-tab-bar";
+
 type faqData = {
   id: number;
   question: string;
@@ -45,36 +47,6 @@ const categoryTopProduct = [
     createdAt: new Date().toISOString(),
   },
 ];
-
-function FaqHeader() {
-  return (
-    <div
-      className={clsx(
-        "flex justify-between gap-6 text-foreground flex-col",
-        "md:items-center md:flex-row px-7",
-      )}
-    >
-      {/* top products title */}
-      <div className="grid gap-2">
-        <span className="text-foreground/80">سوالات متداول </span>
-        <b className="text-xl">سوالات خود را از اینجا پیدا کنید !</b>
-      </div>
-
-      {/* top products category */}
-      <div
-        className={clsx("flex gap-4 flex-col", "md:items-center md:flex-row")}
-      >
-        <div className="flex items-center py-2 gap-10 overflow-auto max-w-full">
-          {categoryTopProduct.map((item, idx) => (
-            <span key={idx} className="text-nowrap">
-              {item.title}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
 
 interface rowItem {
   item: { id: number; question: string; answer: string };
@@ -137,8 +109,12 @@ export default function Faq({ data }: faqProps) {
 
   return (
     <section className="flex flex-col gap-16">
-      <FaqHeader />
-
+      <SectionTabBar
+        categories={categoryTopProduct}
+        eyebrow="سوالات متداول "
+        title="  سوالات خود را از اینجا پیدا کنید !"
+      />
+      
       <div className="flex flex-col gap-4">
         {data.slice(0, 4).map((item) => (
           <RowItem
