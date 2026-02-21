@@ -14,7 +14,7 @@ export function Header() {
     <header
       className={clsx(
         "fixed inset-x-0 top-0 z-50 px-6",
-        "backdrop-blur-3xl bg-accent md:py-5",
+        "backdrop-blur-3xl bg-accent py-2 md:py-5",
       )}
     >
       <nav
@@ -50,7 +50,7 @@ export function Header() {
           ))}
         </div>
 
-        <AuthButton className="hidden md:flex shrink-0" isAuthenticated={true} />
+        <AuthButton className="hidden md:flex shrink-0" isAuthenticated={false} />
       </nav>
     </header>
   );

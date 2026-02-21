@@ -479,8 +479,113 @@ const config = {
         "بله، کاربران می‌توانند از طریق بخش پیشنهادات، موضوعات موردنظر خود را ارسال کنند تا در برنامه تولید محتوا بررسی شوند.",
     },
   ],
-  brandHistoryCategory: ["مردانه", "زنانه", "بچه گانه", "بیسبالی", "فدورا"],
-};
+ brandHistoryCategories :[
+  {
+    id: 101,
+    title: "مردانه",
+    TitleEn: "Men",
+    parent: null,
+    image: "/images/categories/men.png",
+    color: "#2E2E2E",
+    breadcrumbs: [
+      { label: "خانه", url: "/" },
+      { label: "مردانه", url: "/categories/men" },
+    ],
+    slug: "men",
+    slugLock: false,
+    products: {
+      docs: [],
+      hasNextPage: false,
+      totalDocs: 0,
+    },
+    createdAt: "2026-02-21T00:00:00Z",
+    updatedAt: "2026-02-21T00:00:00Z",
+  },
+  {
+    id: 102,
+    title: "زنانه",
+    TitleEn: "Women",
+    parent: null,
+    image: "/images/categories/women.png",
+    color: "#8E3A59",
+    breadcrumbs: [
+      { label: "خانه", url: "/" },
+      { label: "زنانه", url: "/categories/women" },
+    ],
+    slug: "women",
+    slugLock: false,
+    products: {
+      docs: [],
+      hasNextPage: false,
+      totalDocs: 0,
+    },
+    createdAt: "2026-02-21T00:00:00Z",
+    updatedAt: "2026-02-21T00:00:00Z",
+  },
+  {
+    id: 103,
+    title: "بچه گانه",
+    TitleEn: "Kids",
+    parent: null,
+    image: "/images/categories/kids.png",
+    color: "#3A6EA5",
+    breadcrumbs: [
+      { label: "خانه", url: "/" },
+      { label: "بچه گانه", url: "/categories/kids" },
+    ],
+    slug: "kids",
+    slugLock: false,
+    products: {
+      docs: [],
+      hasNextPage: false,
+      totalDocs: 0,
+    },
+    createdAt: "2026-02-21T00:00:00Z",
+    updatedAt: "2026-02-21T00:00:00Z",
+  },
+  {
+    id: 104,
+    title: "بیسبالی",
+    TitleEn: "Baseball",
+    parent: null,
+    image: "/images/categories/baseball.png",
+    color: "#1F4F4F",
+    breadcrumbs: [
+      { label: "خانه", url: "/" },
+      { label: "بیسبالی", url: "/categories/baseball" },
+    ],
+    slug: "baseball",
+    slugLock: false,
+    products: {
+      docs: [],
+      hasNextPage: false,
+      totalDocs: 0,
+    },
+    createdAt: "2026-02-21T00:00:00Z",
+    updatedAt: "2026-02-21T00:00:00Z",
+  },
+  {
+    id: 105,
+    title: "فدورا",
+    TitleEn: "Fedora",
+    parent: null,
+    image: "/images/categories/fedora.png",
+    color: "#5C4033",
+    breadcrumbs: [
+      { label: "خانه", url: "/" },
+      { label: "فدورا", url: "/categories/fedora" },
+    ],
+    slug: "fedora",
+    slugLock: false,
+    products: {
+      docs: [],
+      hasNextPage: false,
+      totalDocs: 0,
+    },
+    createdAt: "2026-02-21T00:00:00Z",
+    updatedAt: "2026-02-21T00:00:00Z",
+  },
+]};
 
 export default function Home() {
   return (
@@ -499,7 +604,7 @@ export default function Home() {
         <ProductCategory category={config.productsCategory} />
 
         <BrandStorySection
-          categoryItems={config.productsCategory}
+          categoryItems={config.brandHistoryCategories}
           images={config.brandStoryImages}
         />
 

@@ -16,7 +16,7 @@ export default function MobileDrawer({ className }: { className?: string }) {
     <Drawer.Root direction="right">
       <Drawer.Trigger asChild>
         <Button
-          className={clsx("bg-bacground! w-14 h-14", className)}
+          className={clsx("bg-background/20! w-12 h-12", className)}
           isIconOnly
         >
           <Bars2Icon className="w-6 h-6" />
