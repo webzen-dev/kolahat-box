@@ -1,6 +1,6 @@
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 
-import HomeHeroSection from "@/components/landing/home-hero-section";
+// import HomeHeroSection from "@/components/landing/home-hero-section";
 import AboutUsSection from "@/components/pages/home/about-us-section";
 import BlogSection from "@/components/pages/home/blog-section";
 import BrandStorySection from "@/components/pages/home/brand-story-section";
@@ -479,14 +479,15 @@ const config = {
         "بله، کاربران می‌توانند از طریق بخش پیشنهادات، موضوعات موردنظر خود را ارسال کنند تا در برنامه تولید محتوا بررسی شوند.",
     },
   ],
+  brandHistoryCategory: ["مردانه", "زنانه", "بچه گانه", "بیسبالی", "فدورا"],
 };
 
 export default function Home() {
   return (
-    <section className="flex flex-col">
+    <section className="flex flex-col pt-70 ">
       {/* padding just for development mode  */}
-      <HomeHeroSection />
-{/* 
+      {/* <HomeHeroSection /> */}
+
       <div className="container mx-auto px-10">
         <AboutUsSection
           poster="/images/thumbnail.jpg"
@@ -497,7 +498,10 @@ export default function Home() {
 
         <ProductCategory category={config.productsCategory} />
 
-        <BrandStorySection images={config.brandStoryImages} />
+        <BrandStorySection
+          categoryItems={config.productsCategory}
+          images={config.brandStoryImages}
+        />
 
         <CustomOrder data={config.customOrderBoxData} />
       </div>
@@ -510,7 +514,7 @@ export default function Home() {
       <div className="container mx-auto px-10">
         <BlogSection blog={config.blogData} />
         <Faq data={config.faqDemoData} />
-      </div> */}
+      </div>
     </section>
   );
 }
