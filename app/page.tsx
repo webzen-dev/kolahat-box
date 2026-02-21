@@ -1,11 +1,9 @@
-// import BlogSection from "@/components/common/_blog-section";
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 
 import HomeHeroSection from "@/components/landing/home-hero-section";
 import AboutUsSection from "@/components/pages/home/about-us-section";
 import BlogSection from "@/components/pages/home/blog-section";
 import BrandStorySection from "@/components/pages/home/brand-story-section";
-// import HomeHeroSection from '@/components/landing/home-hero-section';
 import CustomOrder from "@/components/pages/home/custom-order-section";
 import Faq from "@/components/pages/home/faq-section";
 import HorizontalInfiniteScroll from "@/components/pages/home/horizontal-infinite-scroll";
@@ -488,7 +486,7 @@ export default function Home() {
     <section className="flex flex-col">
       {/* padding just for development mode  */}
       <HomeHeroSection />
-
+{/* 
       <div className="container mx-auto px-10">
         <AboutUsSection
           poster="/images/thumbnail.jpg"
@@ -512,7 +510,7 @@ export default function Home() {
       <div className="container mx-auto px-10">
         <BlogSection blog={config.blogData} />
         <Faq data={config.faqDemoData} />
-      </div>
+      </div> */}
     </section>
   );
 }

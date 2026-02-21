@@ -42,7 +42,7 @@ export default function RootLayout({
           vazirmatn.variable,
         )}
       >
-        <Header />
+        {/* <Header /> */}
         <main className="mx-auto flex-grow">{children}</main>
         <Footer />
       </body>

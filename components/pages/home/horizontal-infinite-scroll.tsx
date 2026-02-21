@@ -7,7 +7,7 @@ export default function HorizontalInfiniteScroll({
   images: string[];
 }) {
   return (
-    <div
+    <section
       className={clsx(
         "flex flex-nowrap items-center overflow-x-hidden",
         "select-none mb-36 horizontal-infinite-scroll-container group",
@@ -33,6 +33,6 @@ export default function HorizontalInfiniteScroll({
           ))}
         </div>
       ))}
-    </div>
+    </section>
   );
 }
