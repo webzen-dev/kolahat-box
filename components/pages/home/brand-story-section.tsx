@@ -48,7 +48,6 @@ export default function BrandStorySection({
           "grid-cols-1 md:grid-cols-3 lg:grid-cols-4",
         )}
       >
-{/*  */}
         {columns.map((col, colIndex) => (
           <div
             key={colIndex}
